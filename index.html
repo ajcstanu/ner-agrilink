@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NER AgroLink — Smart Transport for Remote Farms</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🌿</span>
+      <span class="logo-text">NER<span class="accent">AgroLink</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#tracker">Tracker</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#contact" class="nav-cta">Book Transport</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="terrain-lines"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🏔️ Northeast India · Remote Farm Logistics</div>
+      <h1 class="hero-title">
+        From <em>Field</em> to<br/>
+        <span class="highlight-text">Motorable Road</span><br/>
+        Under ₹1/kg
+      </h1>
+      <p class="hero-sub">Solar-powered cableways, electric cargo trikes & IoT monitoring — built for NER's rugged hills, designed for farmers.</p>
+      <div class="hero-actions">
+        <a href="#dashboard" class="btn-primary">View Live Dashboard</a>
+        <a href="#solutions" class="btn-ghost">Explore Solutions ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="stat-num">₹1–2</span><span class="stat-label">per kg cost</span></div>
+        <div class="stat-pill"><span class="stat-num">40%</span><span class="stat-label">spoilage reduced</span></div>
+        <div class="stat-pill"><span class="stat-num">3×</span><span class="stat-label">income increase</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mountain-scene">
+        <svg viewBox="0 0 600 300" class="mountain-svg" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sky gradient -->
+          <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#0d2b1e;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#1a5c36;stop-opacity:1"/>
+            </linearGradient>
+            <linearGradient id="hillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#2d7a4f;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#1a4a2e;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="300" fill="url(#skyGrad)"/>
+          <!-- Mountains -->
+          <polygon points="0,300 80,120 160,300" fill="#1a4a2e" opacity="0.8"/>
+          <polygon points="100,300 220,80 340,300" fill="#2d7a4f" opacity="0.9"/>
+          <polygon points="250,300 380,100 510,300" fill="#1a5c36"/>
+          <polygon points="400,300 520,140 600,300" fill="#1a4a2e" opacity="0.7"/>
+          <!-- Ground -->
+          <rect x="0" y="270" width="600" height="30" fill="#0d2b1e"/>
+          <!-- Cableway poles -->
+          <line x1="80" y1="150" x2="80" y2="270" stroke="#8bc34a" stroke-width="3"/>
+          <line x1="200" y1="110" x2="200" y2="200" stroke="#8bc34a" stroke-width="3"/>
+          <line x1="320" y1="130" x2="320" y2="230" stroke="#8bc34a" stroke-width="3"/>
+          <line x1="450" y1="160" x2="450" y2="270" stroke="#8bc34a" stroke-width="3"/>
+          <!-- Cable line -->
+          <path d="M60,145 Q140,105 200,108 Q280,112 320,128 Q390,150 460,158" stroke="#f4c542" stroke-width="2" fill="none" stroke-dasharray="6,3"/>
+          <!-- Trolley -->
+          <g class="trolley-anim">
+            <rect x="185" y="98" width="30" height="18" rx="3" fill="#f4c542"/>
+            <text x="200" y="111" text-anchor="middle" font-size="10" fill="#0d2b1e">📦</text>
+          </g>
+          <!-- Sun/solar -->
+          <circle cx="540" cy="50" r="25" fill="#f4c542" opacity="0.3"/>
+          <circle cx="540" cy="50" r="15" fill="#f4c542" opacity="0.7"/>
+          <!-- Farm hut -->
+          <polygon points="60,230 100,200 140,230" fill="#8bc34a"/>
+          <rect x="75" y="230" width="50" height="30" fill="#5d8a2e"/>
+          <!-- Road -->
+          <rect x="0" y="268" width="600" height="8" fill="#333" opacity="0.6"/>
+          <line x1="0" y1="272" x2="600" y2="272" stroke="#f4c542" stroke-width="1" stroke-dasharray="20,15"/>
+          <!-- Trike on road -->
+          <text x="480" y="267" font-size="18">🛺</text>
+        </svg>
+        <div class="cable-dot"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="section solutions-section">
+    <div class="section-header">
+      <span class="section-tag">Transport Modes</span>
+      <h2>Four Pathways to Market</h2>
+      <p>Purpose-built for NER's hills, valleys, and forest corridors</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-card card-cable">
+        <div class="card-icon">🚡</div>
+        <h3>Smart Cable Conveyor</h3>
+        <p>Aerial solar + battery–powered cableway with IoT cargo monitoring. Ideal for steep hilly terrain with no road access.</p>
+        <ul class="card-specs">
+          <li>🔋 Solar + battery hybrid</li>
+          <li>📡 Real-time load monitoring</li>
+          <li>📱 Mobile app booking</li>
+          <li>💰 ₹0.80/kg operational cost</li>
+        </ul>
+        <div class="card-terrain">Best for: 45°+ slopes, 500m+ elevation</div>
+      </div>
+      <div class="solution-card card-mono">
+        <div class="card-icon">🚝</div>
+        <h3>Lightweight Monorail</h3>
+        <p>Cableway-type monorail on concrete poles, running trolleys from fields to collection points with only 2 operators.</p>
+        <ul class="card-specs">
+          <li>🏗️ Concrete pole structure</li>
+          <li>👥 2-operator system</li>
+          <li>📦 500 kg per trip capacity</li>
+          <li>💰 ₹1.20/kg operational cost</li>
+        </ul>
+        <div class="card-terrain">Best for: Uneven mid-slope terrain</div>
+      </div>
+      <div class="solution-card card-trike">
+        <div class="card-icon">🛺</div>
+        <h3>Solar/Electric Cargo Trike</h3>
+        <p>Rugged 3-wheeler with solar charging and modular detachable crates. GPS-tracked for transparent logistics on narrow paths.</p>
+        <ul class="card-specs">
+          <li>☀️ Solar-charged battery</li>
+          <li>📍 GPS real-time tracking</li>
+          <li>🧩 Modular crate system</li>
+          <li>💰 ₹1.50/kg operational cost</li>
+        </ul>
+        <div class="card-terrain">Best for: Narrow rural pathways, <25° slope</div>
+      </div>
+      <div class="solution-card card-bamboo">
+        <div class="card-icon">🎋</div>
+        <h3>Bamboo-Based Carrier</h3>
+        <p>Carriages built from local Bambusa Balcoa — lightweight, durable, zero import cost. Weather-protected with plastic covers.</p>
+        <ul class="card-specs">
+          <li>🌿 100% local material</li>
+          <li>🛡️ Weather-proof covers</li>
+          <li>🏔️ Steep terrain capable</li>
+          <li>💰 ₹0.60/kg operational cost</li>
+        </ul>
+        <div class="card-terrain">Best for: Remote villages, zero-infra zones</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DASHBOARD -->
+  <section id="dashboard" class="section dashboard-section">
+    <div class="section-header light">
+      <span class="section-tag">Live Operations</span>
+      <h2>Farm Transport Dashboard</h2>
+      <p>Real-time monitoring across NER routes — simulated demo data</p>
+    </div>
+    <div class="dashboard-grid">
+      <!-- Stats row -->
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <div class="dash-stat-val" id="active-routes">12</div>
+          <div class="dash-stat-label">Active Routes</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-val" id="kg-today">4,280</div>
+          <div class="dash-stat-label">kg Moved Today</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-val" id="cost-avg">₹1.12</div>
+          <div class="dash-stat-label">Avg Cost/kg</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-val" id="spoilage">3.2%</div>
+          <div class="dash-stat-label">Spoilage Rate</div>
+        </div>
+      </div>
+      <!-- Route map placeholder -->
+      <div class="dash-map">
+        <div class="map-header">
+          <span>📍 Active Routes — Meghalaya / Manipur / Nagaland</span>
+          <span class="live-badge">● LIVE</span>
+        </div>
+        <div class="map-canvas" id="map-canvas">
+          <svg viewBox="0 0 700 380" class="route-map" xmlns="http://www.w3.org/2000/svg">
+            <rect width="700" height="380" rx="8" fill="#0a1f15"/>
+            <!-- Topographic lines -->
+            <ellipse cx="350" cy="190" rx="300" ry="140" fill="none" stroke="#1a4a2e" stroke-width="1"/>
+            <ellipse cx="350" cy="190" rx="240" ry="110" fill="none" stroke="#1a4a2e" stroke-width="1"/>
+            <ellipse cx="350" cy="190" rx="180" ry="80" fill="none" stroke="#1a5c36" stroke-width="1"/>
+            <ellipse cx="350" cy="190" rx="120" ry="55" fill="none" stroke="#2d7a4f" stroke-width="1"/>
+            <!-- Route lines -->
+            <path d="M100,280 Q180,200 280,160 Q350,140 420,150" stroke="#f4c542" stroke-width="2.5" fill="none" stroke-dasharray="8,4" opacity="0.9"/>
+            <path d="M150,320 Q200,270 290,240 Q370,220 460,200 Q530,185 600,160" stroke="#8bc34a" stroke-width="2.5" fill="none" stroke-dasharray="8,4" opacity="0.9"/>
+            <path d="M200,100 Q260,130 310,170 Q360,205 430,230" stroke="#4fc3f7" stroke-width="2" fill="none" stroke-dasharray="8,4" opacity="0.7"/>
+            <!-- Farm nodes -->
+            <circle cx="100" cy="280" r="8" fill="#f4c542"/>
+            <text x="100" y="300" text-anchor="middle" font-size="10" fill="#f4c542">Ukhrul</text>
+            <circle cx="150" cy="320" r="8" fill="#8bc34a"/>
+            <text x="150" y="338" text-anchor="middle" font-size="10" fill="#8bc34a">Senapati</text>
+            <circle cx="200" cy="100" r="8" fill="#4fc3f7"/>
+            <text x="200" y="92" text-anchor="middle" font-size="10" fill="#4fc3f7">Mawsynram</text>
+            <!-- Collection points -->
+            <rect x="410" y="140" width="20" height="20" rx="4" fill="#f4c542"/>
+            <text x="440" y="155" font-size="10" fill="#f4c542">NH-2</text>
+            <rect x="590" y="150" width="20" height="20" rx="4" fill="#8bc34a"/>
+            <text x="615" y="165" font-size="10" fill="#8bc34a">NH-37</text>
+            <rect x="420" y="220" width="20" height="20" rx="4" fill="#4fc3f7"/>
+            <text x="445" y="235" font-size="10" fill="#4fc3f7">NH-102</text>
+            <!-- Moving dots -->
+            <circle class="route-dot-1" cx="200" cy="210" r="5" fill="#f4c542"/>
+            <circle class="route-dot-2" cx="350" cy="260" r="5" fill="#8bc34a"/>
+            <circle class="route-dot-3" cx="270" cy="140" r="5" fill="#4fc3f7"/>
+            <!-- Legend -->
+            <rect x="20" y="20" width="180" height="90" rx="6" fill="#0d2b1e" opacity="0.9"/>
+            <line x1="35" y1="42" x2="65" y2="42" stroke="#f4c542" stroke-width="2" stroke-dasharray="6,3"/>
+            <text x="75" y="46" font-size="11" fill="#f4c542">Cable/Monorail</text>
+            <line x1="35" y1="62" x2="65" y2="62" stroke="#8bc34a" stroke-width="2" stroke-dasharray="6,3"/>
+            <text x="75" y="66" font-size="11" fill="#8bc34a">Electric Trike</text>
+            <line x1="35" y1="82" x2="65" y2="82" stroke="#4fc3f7" stroke-width="2" stroke-dasharray="6,3"/>
+            <text x="75" y="86" font-size="11" fill="#4fc3f7">Bamboo Carrier</text>
+            <circle cx="44" cy="100" r="5" fill="#f4c542"/>
+            <text x="55" y="104" font-size="11" fill="#aaa">Farm node</text>
+          </svg>
+        </div>
+      </div>
+      <!-- Active shipments table -->
+      <div class="dash-table-wrap">
+        <div class="table-header">
+          <h3>Active Shipments</h3>
+          <button class="refresh-btn" onclick="refreshShipments()">⟳ Refresh</button>
+        </div>
+        <table class="shipment-table" id="shipment-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Route</th>
+              <th>Produce</th>
+              <th>Wt (kg)</th>
+              <th>Mode</th>
+              <th>Status</th>
+              <th>ETA</th>
+            </tr>
+          </thead>
+          <tbody id="shipment-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKER -->
+  <section id="tracker" class="section tracker-section">
+    <div class="section-header">
+      <span class="section-tag">IoT Monitor</span>
+      <h2>Cargo Condition Tracker</h2>
+      <p>Live sensor data per shipment — temperature, humidity, vibration</p>
+    </div>
+    <div class="tracker-layout">
+      <div class="tracker-input-wrap">
+        <label>Enter Shipment ID</label>
+        <div class="tracker-input-row">
+          <input type="text" id="track-id" placeholder="e.g. NER-2024-001" class="track-input"/>
+          <button class="btn-primary" onclick="trackShipment()">Track</button>
+        </div>
+        <div class="sample-ids">
+          Try: 
+          <span class="sample-id" onclick="loadSample('NER-2024-001')">NER-2024-001</span>
+          <span class="sample-id" onclick="loadSample('NER-2024-004')">NER-2024-004</span>
+          <span class="sample-id" onclick="loadSample('NER-2024-007')">NER-2024-007</span>
+        </div>
+      </div>
+      <div class="tracker-result" id="tracker-result">
+        <div class="tracker-placeholder">
+          <span>📡</span>
+          <p>Enter a shipment ID to view live IoT data</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="section benefits-section">
+    <div class="section-header light">
+      <span class="section-tag">Impact</span>
+      <h2>Why It Works for NER</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🌱</div>
+        <h3>Reduced Spoilage</h3>
+        <p>Faster, reliable transport cuts post-harvest losses by up to 40% compared to manual head-loading over steep terrain.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>Higher ROI for Farmers</h3>
+        <p>Operational costs kept at ₹1–2/kg. Farmers reinvest savings, improving livelihoods across remote NE communities.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">☀️</div>
+        <h3>Eco-Friendly & Sustainable</h3>
+        <p>Solar-powered systems reduce fossil fuel dependency in ecologically sensitive NER zones and tribal forests.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📶</div>
+        <h3>IoT Transparency</h3>
+        <p>Real-time monitoring of load, temperature, and route ensures accountability and trust between farmers and buyers.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏔️</div>
+        <h3>Terrain-Adaptive Design</h3>
+        <p>Multiple modes (cable, trike, bamboo) ensure every farm — regardless of slope or remoteness — can access logistics.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌿</div>
+        <h3>Local Material Use</h3>
+        <p>Bambusa Balcoa (native NER bamboo) enables ultra-low-cost carriers with zero import dependency.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST CALCULATOR -->
+  <section id="calculator" class="section calc-section">
+    <div class="section-header">
+      <span class="section-tag">Planning Tool</span>
+      <h2>Transport Cost Estimator</h2>
+    </div>
+    <div class="calc-layout">
+      <div class="calc-form">
+        <div class="form-group">
+          <label>Produce Weight (kg)</label>
+          <input type="range" id="weight" min="50" max="2000" value="500" oninput="calcCost()"/>
+          <span id="weight-val">500 kg</span>
+        </div>
+        <div class="form-group">
+          <label>Distance to Road (km)</label>
+          <input type="range" id="distance" min="0.5" max="20" value="5" step="0.5" oninput="calcCost()"/>
+          <span id="dist-val">5 km</span>
+        </div>
+        <div class="form-group">
+          <label>Terrain Slope</label>
+          <select id="slope" onchange="calcCost()">
+            <option value="flat">Flat / Gentle (&lt;15°)</option>
+            <option value="moderate" selected>Moderate (15–30°)</option>
+            <option value="steep">Steep (30–45°)</option>
+            <option value="extreme">Extreme (&gt;45°)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Produce Type</label>
+          <select id="produce" onchange="calcCost()">
+            <option value="veg">Vegetables / Greens</option>
+            <option value="fruit">Fruits</option>
+            <option value="paddy">Paddy / Grains</option>
+            <option value="bamboo">Bamboo Shoots</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-result" id="calc-result">
+        <div class="result-mode" id="result-mode">Recommended: Smart Cable Conveyor</div>
+        <div class="result-cost">
+          <span class="cost-big" id="cost-total">₹625</span>
+          <span class="cost-label">estimated total cost</span>
+        </div>
+        <div class="cost-breakdown" id="cost-breakdown">
+          <div class="breakdown-item"><span>Per kg cost</span><span id="per-kg">₹1.25</span></div>
+          <div class="breakdown-item"><span>Est. time</span><span id="est-time">45 min</span></div>
+          <div class="breakdown-item"><span>Spoilage risk</span><span id="spoil-risk" class="risk-low">Low</span></div>
+          <div class="breakdown-item"><span>CO₂ saved vs fossil</span><span id="co2">4.2 kg</span></div>
+        </div>
+        <div class="alt-modes" id="alt-modes"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section id="contact" class="section booking-section">
+    <div class="section-header light">
+      <span class="section-tag">Book Now</span>
+      <h2>Schedule a Transport</h2>
+      <p>Fill out the form and our system will dispatch the right transport mode to your farm</p>
+    </div>
+    <form class="booking-form" onsubmit="submitBooking(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Farmer Name</label>
+          <input type="text" placeholder="Your full name" required/>
+        </div>
+        <div class="form-field">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Village / Farm Location</label>
+          <input type="text" placeholder="Village, District, State" required/>
+        </div>
+        <div class="form-field">
+          <label>Nearest Motorable Road</label>
+          <input type="text" placeholder="Road name or landmark"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Produce Type</label>
+          <select>
+            <option>Vegetables</option>
+            <option>Fruits</option>
+            <option>Paddy</option>
+            <option>Bamboo Shoots</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Estimated Weight (kg)</label>
+          <input type="number" placeholder="e.g. 300" min="1"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Preferred Date</label>
+          <input type="date"/>
+        </div>
+        <div class="form-field">
+          <label>Transport Preference</label>
+          <select>
+            <option>System Recommended</option>
+            <option>Cable Conveyor</option>
+            <option>Monorail</option>
+            <option>Electric Cargo Trike</option>
+            <option>Bamboo Carrier</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field full-width">
+        <label>Additional Notes</label>
+        <textarea placeholder="Special handling instructions, access info, etc."></textarea>
+      </div>
+      <button type="submit" class="btn-primary btn-large">📦 Book Transport Now</button>
+    </form>
+    <div id="booking-success" class="booking-success" style="display:none">
+      ✅ Booking confirmed! You will receive an SMS confirmation shortly.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">NER<span class="accent">AgroLink</span></span>
+        <p>Connecting NER's remote farms to markets through sustainable, smart transport.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Solutions</h4>
+        <a href="#solutions">Cable Conveyor</a>
+        <a href="#solutions">Monorail</a>
+        <a href="#solutions">Cargo Trike</a>
+        <a href="#solutions">Bamboo Carrier</a>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#tracker">IoT Tracker</a>
+        <a href="#calculator">Cost Estimator</a>
+        <a href="#contact">Book Transport</a>
+      </div>
+      <div class="footer-links">
+        <h4>States Covered</h4>
+        <span>Manipur</span>
+        <span>Nagaland</span>
+        <span>Meghalaya</span>
+        <span>Arunachal Pradesh</span>
+        <span>Mizoram</span>
+        <span>Tripura</span>
+        <span>Assam Hills</span>
+        <span>Sikkim</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 NERAgroLink — Open Source under MIT License</span>
+      <span>Built for farmers. Powered by the sun. 🌿</span>
+    </div>
+  </footer>
+
+  <script src="js/dashboard.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
