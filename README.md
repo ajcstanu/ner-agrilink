@@ -295,10 +295,3 @@ pytest tests.py -v
 
 ---
 
-## 📄 License
-
-MIT License — Free to use, fork, and deploy.
-
----
-
-*Built for farmers. Powered by the sun. 🌿*
