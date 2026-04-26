@@ -1,8 +1,6 @@
 // dashboard.js — Live shipment dashboard for NER AgroLink
 // Fetches data from Flask API: GET /api/shipments and GET /api/stats
-
 const API_BASE = window.API_BASE || "http://localhost:5000/api";
-
 function renderShipments(data) {
   const tbody = document.getElementById("shipment-body");
   if (!tbody) return;
