@@ -1,5 +1,4 @@
 name: CI
-
 on:
   push:
     branches: [main, develop]
@@ -28,7 +27,6 @@ jobs:
         run: |
           cd backend
           pytest tests.py -v --tb=short
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
