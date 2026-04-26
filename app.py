@@ -2,14 +2,12 @@
 NER AgroLink — Flask Backend
 Smart Transport Solution for Remote Farms (Northeast India)
 """
-
 from flask import Flask, jsonify, request, abort
 from flask_cors import CORS
 from database import db, init_db
 from models import Shipment, Booking, IoTReading, DashboardStat
 import random
 from datetime import datetime
-
 import os as _os
 
 app = Flask(__name__)
@@ -34,7 +32,6 @@ SLOPE_MULTIPLIER = {"flat": 1.0, "moderate": 1.15, "steep": 1.35, "extreme": 1.6
 PRODUCE_MULT     = {"veg": 1.0, "fruit": 1.1, "paddy": 0.9, "bamboo": 0.85}
 SLOPE_BEST_MODE  = {"flat": "trike", "moderate": "mono", "steep": "cable", "extreme": "cable"}
 
-
 def calculate_cost(weight, distance, slope, produce):
     best = SLOPE_BEST_MODE.get(slope, "cable")
     mode = MODE_COSTS[best]
@@ -58,7 +55,6 @@ def calculate_cost(weight, distance, slope, produce):
 # ---------------------------------------------------------------------------
 # Routes — Calculator
 # ---------------------------------------------------------------------------
-
 @app.route("/api/calculate", methods=["GET"])
 def api_calculate():
     """
@@ -134,7 +130,6 @@ def api_track(shipment_id):
     data["last_updated"] = datetime.utcnow().strftime("%H:%M:%S")
     data["spoilage_risk"] = "LOW" if data["temp_status"] == "ok" else "MEDIUM"
     return jsonify(data)
-
 # ---------------------------------------------------------------------------
 # Routes — Booking
 # ---------------------------------------------------------------------------
@@ -189,7 +184,6 @@ def api_bookings():
 @app.route("/api/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok", "service": "NER AgroLink API", "version": "1.0.0"})
-
 
 if __name__ == "__main__":
     with app.app_context():
