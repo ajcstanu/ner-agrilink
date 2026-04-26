@@ -265,12 +265,10 @@ body {
   background: var(--gold);
   animation: cablePulse 2s ease-in-out infinite;
 }
-
 @keyframes cablePulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.3; transform: scale(0.5); }
 }
-
 /* ---- SECTIONS COMMON ---- */
 .section { padding: 100px 48px; }
 
