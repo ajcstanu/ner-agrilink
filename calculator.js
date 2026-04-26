@@ -8,10 +8,8 @@ async function calcCost() {
   const distance = +document.getElementById("distance").value;
   const slope    = document.getElementById("slope").value;
   const produce  = document.getElementById("produce").value;
-
   document.getElementById("weight-val").textContent = weight + " kg";
   document.getElementById("dist-val").textContent   = distance + " km";
-
   try {
     const res  = await fetch(
       `${API_BASE}/calculate?weight=${weight}&distance=${distance}&slope=${slope}&produce=${produce}`
@@ -37,7 +35,6 @@ async function calcCost() {
     _calcCostLocal(weight, distance, slope, produce);
   }
 }
-
 // Offline fallback (mirrors backend logic exactly)
 const _MODE = { cable:{base:0.80,name:"Smart Cable Conveyor 🚡",tpk:8}, mono:{base:1.20,name:"Lightweight Monorail 🚝",tpk:10}, trike:{base:1.50,name:"Electric Cargo Trike 🛺",tpk:12}, bamboo:{base:0.60,name:"Bamboo Carrier 🎋",tpk:20} };
 const _SM   = { flat:1.0, moderate:1.15, steep:1.35, extreme:1.6 };
@@ -64,5 +61,4 @@ function _calcCostLocal(weight, distance, slope, produce) {
     Object.entries(_MODE).filter(([k]) => k !== bk)
       .map(([,v]) => `${v.name}: ₹${Math.round(v.base * _SM[slope] * _PM[produce] * weight).toLocaleString()}`).join("<br>");
 }
-
 document.addEventListener("DOMContentLoaded", calcCost);
