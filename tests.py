@@ -2,15 +2,11 @@
 tests.py — Pytest suite for NER AgroLink Flask backend
 Run: pytest tests.py -v
 """
-
 import os
 import pytest
 
 os.environ["DATABASE_URL"] = "sqlite:///:memory:"
-
 from app import app as flask_app, db, calculate_cost  # noqa: E402
-
-
 @pytest.fixture(scope="module")
 def app():
     flask_app.config["TESTING"] = True
@@ -20,13 +16,9 @@ def app():
         from database import _seed
         _seed(db)
     yield flask_app
-
-
 @pytest.fixture
 def client(app):
     return app.test_client()
-
-
 # ---------------------------------------------------------------------------
 # Pure logic
 # ---------------------------------------------------------------------------
@@ -59,8 +51,6 @@ class TestCalculateCost:
     def test_co2(self):
         r = calculate_cost(200, 4, "flat", "veg")
         assert r["co2_saved_kg"] == round(200 * 0.001 * 4 * 0.6, 1)
-
-
 # ---------------------------------------------------------------------------
 # API endpoints
 # ---------------------------------------------------------------------------
@@ -147,8 +137,6 @@ class TestBookingAPI:
         client.post("/api/booking", json=self.PAYLOAD)
         r = client.get("/api/bookings")
         assert r.get_json()["count"] >= 1
-
-
 class TestHealthAPI:
     def test_ok(self, client):
         r = client.get("/api/health")
